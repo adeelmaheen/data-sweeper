@@ -67,7 +67,7 @@ if uploaded_file:
         
         # Column Selection
         st.subheader(f"📌 Select Columns for {file_name}")
-        selected_columns = st.multiselect("Choose Columns", df.columns.tolist(), default=df.columns.tolist())
+        selected_columns: list[str] = st.multiselect("Choose Columns", df.columns.tolist(), default=df.columns.tolist())
         df = df[selected_columns]
         
         # Advanced Visualization
